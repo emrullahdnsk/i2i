@@ -1,0 +1,114 @@
+
+Emrullah@HPDK2069NT MINGW64 ~
+$ cd desktop
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop
+$ cd GitProject
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject
+$ git init
+Initialized empty Git repository in C:/Users/Emrullah/Desktop/GitProject/.git/
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject (master)
+$ touch readme.md
+echo "Bu proje r2.5.4 hatasını düzeltmek için oluşturuldu." > readme.md
+git add .
+git commit -m "Proje başlangıcı: readme dosyası eklendi"
+warning: in the working copy of 'readme.md', LF will be replaced by CRLF the next time Git touches it
+[master (root-commit) e2ce4b8] Proje başlangıcı: readme dosyası eklendi
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.md
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject (master)
+$ git branch r2.5.4
+git branch r2.5.5
+git branch r3.0
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject (master)
+$ git branch -a
+* master
+  r2.5.4
+  r2.5.5
+  r3.0
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject (master)
+$ git checkout r2.5.4
+git checkout -b r2.5.4.1-bugfix
+Switched to branch 'r2.5.4'
+Switched to a new branch 'r2.5.4.1-bugfix'
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject (r2.5.4.1-bugfix)
+$ echo "Hata düzeltildi." >> readme.md
+git add .
+git commit -m "r2.5.4: Hata düzeltildi."
+warning: in the working copy of 'readme.md', LF will be replaced by CRLF the next time Git touches it
+[r2.5.4.1-bugfix c6cac61] r2.5.4: Hata düzeltildi.
+ 1 file changed, 1 insertion(+)
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject (r2.5.4.1-bugfix)
+$ git checkout r2.5.5
+git merge r2.5.4.1-bugfix
+Switched to branch 'r2.5.5'
+Updating e2ce4b8..c6cac61
+Fast-forward
+ readme.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject (r2.5.5)
+$ git add .
+git commit -m "Çatışma çözüldü: r2.5.4.1-bugfix değişiklikleri birleştirildi."
+On branch r2.5.5
+nothing to commit, working tree clean
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject (r2.5.5)
+$ git checkout r3.0
+git merge r2.5.4.1-bugfix
+Switched to branch 'r3.0'
+Updating e2ce4b8..c6cac61
+Fast-forward
+ readme.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject (r3.0)
+$ git add .
+git commit -m "Çatışma çözüldü: r2.5.4.1-bugfix değişiklikleri birleştirildi."
+On branch r3.0
+nothing to commit, working tree clean
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject (r3.0)
+$ https://github.com/emrullahdnsk/GitProject.git
+bash: https://github.com/emrullahdnsk/GitProject.git: No such file or directory
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject (r3.0)
+$ git remote add origin < https://github.com/emrullahdnsk/GitProject.git>
+bash: syntax error near unexpected token `newline'
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject (r3.0)
+$ git push origin r2.5.4.1-bugfix
+git push origin r2.5.5
+git push origin r3.0
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject (r3.0)
+$ git add GitProject.txt
+fatal: pathspec 'GitProject.txt' did not match any files
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject (r3.0)
+$ git add GitProject.txt
+
+Emrullah@HPDK2069NT MINGW64 ~/desktop/GitProject (r3.0)
+$
